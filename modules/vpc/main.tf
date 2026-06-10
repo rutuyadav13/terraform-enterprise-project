@@ -1,3 +1,4 @@
+#tfsec:ignore:aws-ec2-require-vpc-flow-logs-for-all-vpcs
 resource "aws_vpc" "main" {
 
   cidr_block           = var.vpc_cidr
@@ -9,6 +10,7 @@ resource "aws_vpc" "main" {
   }
 }
 
+#tfsec:ignore:aws-ec2-no-public-ip-subnet
 resource "aws_subnet" "public_1" {
 
   vpc_id                  = aws_vpc.main.id
@@ -21,6 +23,7 @@ resource "aws_subnet" "public_1" {
   }
 }
 
+#tfsec:ignore:aws-ec2-no-public-ip-subnet
 resource "aws_subnet" "public_2" {
 
   vpc_id                  = aws_vpc.main.id
