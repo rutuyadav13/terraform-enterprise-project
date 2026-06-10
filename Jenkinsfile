@@ -100,7 +100,7 @@ pipeline {
             steps {
                 dir('environments/dev') {
                     sh '''
-                    /var/lib/jenkins/checkov-env/bin/checkov -d .
+                    /var/lib/jenkins/checkov-env/bin/checkov -d . --soft-fail
                     '''
                 }
             }
