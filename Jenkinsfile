@@ -97,10 +97,13 @@ pipeline {
         }
 
         stage('Checkov Scan') {
-
-           dir('environments/dev') {
-        sh '/var/lib/jenkins/checkov-env/bin/checkov -d .'
-    }
+            steps {
+                dir('environments/dev') {
+                    sh '''
+                    /var/lib/jenkins/checkov-env/bin/checkov -d .
+                    '''
+                }
+            }
         }
 
         stage('Terraform Plan') {
