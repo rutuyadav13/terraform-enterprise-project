@@ -29,7 +29,7 @@ resource "aws_iam_role" "ec2_role" {
 }
 resource "aws_iam_role_policy_attachment" "ssm" {
 
-  role       = aws_iam_role.ec2_role.name
+  role = aws_iam_role.ec2_role.name
 
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
@@ -48,7 +48,7 @@ apt install nginx -y
 systemctl enable nginx
 systemctl start nginx
 EOF
-)
+  )
 }
 resource "aws_launch_template" "lt" {
 
