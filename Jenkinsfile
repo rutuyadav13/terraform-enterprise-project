@@ -203,31 +203,4 @@ pipeline {
     }
 
     
-/*
-  ##########################################################
-    #  post {
-#
- #       success {
 
-            slackSend(
-                channel: '#terraform',
-                message: "SUCCESS: ${params.ENV} deployment completed. Build ${BUILD_NUMBER}"
-            )
-        }
-
-        failure {
-
-            slackSend(
-                channel: '#terraform',
-                message: "FAILED: ${params.ENV} deployment failed. Build ${BUILD_NUMBER}"
-            )
-        }
-
-        always {
-
-            cleanWs()
-        }
-    }
-}
-####################################################################
-*/
