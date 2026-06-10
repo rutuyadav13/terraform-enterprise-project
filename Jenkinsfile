@@ -202,5 +202,11 @@ pipeline {
         }
     }
 
-    
+    post {
 
+        always {
+
+            cleanWs()
+        }
+    }
+}
